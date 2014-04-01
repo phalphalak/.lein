@@ -2,6 +2,7 @@
                        [im.chit/vinyasa "0.1.9"]
                        [spyscope "0.1.4"]]
         :plugins [[lein-kibit "0.0.8"]
+                  [lein-clique "0.1.1"]
                   [jonase/eastwood "0.0.2"]]
         :injections [(require 'spyscope.core)
                      (require '[vinyasa.inject :as inj])
