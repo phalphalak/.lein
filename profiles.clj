@@ -1,4 +1,5 @@
-{:user {:dependencies [[leiningen #=(leiningen.core.main/leiningen-version)]
+{:user {:dependencies [;[leiningen #=(leiningen.core.main/leiningen-version)]
+                       ;[leiningen "2.3.3" :exclusions [[org.clojure/core.cache]]]
                        [im.chit/vinyasa "0.1.9"]
                        [spyscope "0.1.4"]]
         :plugins [[lein-kibit "0.0.8"]
@@ -7,12 +8,12 @@
         :injections [(require 'spyscope.core)
                      (require '[vinyasa.inject :as inj])
                      (inj/inject 'clojure.core
-                                 '[[vinyasa.inject inject]
+                                 '[;[vinyasa.inject inject]
                                    [vinyasa.pull pull]
-                                   [vinyasa.lein lein]
-                                   [vinyasa.reimport reimport]
+                                   ;[vinyasa.lein lein]
+                                   ;[vinyasa.reimport reimport]
                                    [clojure.repl doc source]
-                                   [clojure.pprint pprint pp print-table]])]
+                                   [clojure.pprint #_ pprint pp print-table]])]
         :repl-options {:init (do
                                (require '[clojure.pprint :refer :all]
                                         '[clojure.reflect :refer :all])
